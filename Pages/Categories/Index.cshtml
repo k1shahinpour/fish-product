@@ -1,0 +1,54 @@
+﻿@page
+@model EFReverse.Pages.Categories.IndexModel
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].CatNamear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].CatNameen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].TypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category[0].Vissible)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Category) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatNamear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CatNameen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vissible)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CatId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CatId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CatId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

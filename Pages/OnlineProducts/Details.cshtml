@@ -1,0 +1,67 @@
+﻿@page
+@model EFReverse.Pages.OnlineProducts.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblOnlineProduct</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.PosId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.PosId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.ProdId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.ProdId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.Qty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.Qty)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.FreshPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.FreshPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.MealPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.MealPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.DDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.DDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.Photo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.Photo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblOnlineProduct.Vissible)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblOnlineProduct.Vissible)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblOnlineProduct.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

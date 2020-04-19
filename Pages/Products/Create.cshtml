@@ -1,0 +1,64 @@
+﻿@page
+@model EFReverse.Pages.Products.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Product.ProdNameAr" class="control-label"></label>
+                <input asp-for="Product.ProdNameAr" class="form-control" />
+                <span asp-validation-for="Product.ProdNameAr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.ProdNameEn" class="control-label"></label>
+                <input asp-for="Product.ProdNameEn" class="form-control" />
+                <span asp-validation-for="Product.ProdNameEn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.CateId" class="control-label"></label>
+                <input asp-for="Product.CateId" class="form-control" />
+                <span asp-validation-for="Product.CateId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.TypeId" class="control-label"></label>
+                <input asp-for="Product.TypeId" class="form-control" />
+                <span asp-validation-for="Product.TypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Unit" class="control-label"></label>
+                <input asp-for="Product.Unit" class="form-control" />
+                <span asp-validation-for="Product.Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Photo" class="control-label"></label>
+                <input asp-for="Product.Photo" class="form-control" />
+                <span asp-validation-for="Product.Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Vissible" class="control-label"></label>
+                <input asp-for="Product.Vissible" class="form-control" />
+                <span asp-validation-for="Product.Vissible" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

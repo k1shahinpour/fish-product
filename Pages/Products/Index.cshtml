@@ -1,0 +1,72 @@
+﻿@page
+@model EFReverse.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].ProdNameAr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].ProdNameEn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].CateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].TypeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Photo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product[0].Vissible)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Product) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdNameAr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdNameEn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CateId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vissible)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ProdId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ProdId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ProdId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

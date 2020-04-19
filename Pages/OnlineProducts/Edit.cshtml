@@ -1,0 +1,70 @@
+﻿@page
+@model EFReverse.Pages.OnlineProducts.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TblOnlineProduct</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblOnlineProduct.Id" />
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.PosId" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.PosId" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.PosId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.ProdId" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.ProdId" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.ProdId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.Qty" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.Qty" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.FreshPrice" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.FreshPrice" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.FreshPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.MealPrice" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.MealPrice" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.MealPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.DDate" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.DDate" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.DDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.Photo" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.Photo" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.Photo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblOnlineProduct.Vissible" class="control-label"></label>
+                <input asp-for="TblOnlineProduct.Vissible" class="form-control" />
+                <span asp-validation-for="TblOnlineProduct.Vissible" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

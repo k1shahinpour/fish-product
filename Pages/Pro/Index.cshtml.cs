@@ -36,6 +36,7 @@ namespace EFReverse.Pages.Pro
                             op.FreshPrice,
                             pt.TypeName,
                             ps.Loacation,
+                            op.Photo
                         };
             return new JsonResult(model);
         }

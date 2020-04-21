@@ -4,13 +4,13 @@
     ViewData["Title"] = "Products Query";
 }
 
-<h1>Products Query</h1>
+@*<h1>Products Query</h1>*@
 <div id="app">
-    <table class="table table-responsive">
+    @*<table class="table table-responsive">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
+                <th>Name<span class="fa fa-play"></span> </th>
                 <th>pos Id</th>
                 <th>Qty</th>
                 <th>Fresh Price</th>
@@ -28,7 +28,48 @@
             <td>{{product.loacation}}</td>
 
         </tr>
-    </table>
+    </table>*@
+
+
+    <div class="">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h1 class="display-4" style="line-height:28pt"> Items To Order </h1>
+                <hr />
+            </div>
+
+            @*----------product items--------*@
+            <div class="row" >
+                <div class="col-md-3" v-for="(product,index) in products">
+                    <div class="card">
+
+                        <img v-bind:src="'data:image/jpeg;base64,'+product.photo" class="card-img-top" />
+                        <div class="card-body">
+                            @*<h5 class="card-title">{{product.prodNameEn}}</h5>
+                            <h5 class="card-title">{{product.typeName}}</h5>
+                            <p class="card-text">Fresh Price: {{product.freshPrice}} RO</p>*@
+                            <div class="row">
+                                <div class="col-7"><h5 class="card-title">{{product.prodNameEn}}</h5></div>
+                                <div class="col-5 d-flex justify-content-end"><small class="text-muted"><span class="fa fa-map-marker-alt"></span> {{product.loacation}}</small></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10"> Fresh Price: {{product.freshPrice}} RO</div>
+                                <div class="col-2 d-flex justify-content-end"><a class="btn btn-primary text-white fa fa-cart-arrow-down"></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <br>
+        </div>
+    </div>
+
+
+
 </div>
 
 

@@ -36,6 +36,7 @@ namespace EFReverse.Controllers
                         op.FreshPrice,
                         pt.TypeName,
                         ps.Loacation,
+                        op.Photo
                     };
 
 

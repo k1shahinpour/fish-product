@@ -54,7 +54,10 @@
                                 <div class="col-5 d-flex justify-content-end"><small class="text-muted"><span class="fa fa-map-marker-alt"></span> {{product.loacation}}</small></div>
                             </div>
                             <div class="row">
-                                <div class="col-10"> Fresh Price: {{product.freshPrice}} RO</div>
+                                <div class="col-10" v-if="product.typeName === 'Fish'">
+                                <p>Fresh Price: {{product.freshPrice}} RO</p>
+                                </div>
+                                <div class="col-10" v-else="product.typeName === 'Fish'"> Price: {{product.freshPrice}} RO</div>
                                 <div class="col-2 d-flex justify-content-end"><a class="btn btn-primary text-white fa fa-cart-arrow-down"></a></div>
                             </div>
                         </div>

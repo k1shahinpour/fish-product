@@ -41,8 +41,8 @@
 
             @*----------product items--------*@
             <div class="row" >
-                <div class="col-md-3" v-for="(product,index) in products">
-                    <div class="card">
+                <div class="col-sm-6 col-md-4 col-lg-3 my-3" v-for="(product,index) in products">
+                    <div class="card mx-0">
 
                         <img v-bind:src="'data:image/jpeg;base64,'+product.photo" class="card-img-top" />
                         <div class="card-body">
@@ -50,7 +50,7 @@
                             <h5 class="card-title">{{product.typeName}}</h5>
                             <p class="card-text">Fresh Price: {{product.freshPrice}} RO</p>*@
                             <div class="row">
-                                <div class="col-7"><h5 class="card-title">{{product.prodNameEn}}</h5></div>
+                                <div class="col-7"><h6 class="card-title font-weight-bold">{{product.prodNameEn}}</h6></div>
                                 <div class="col-5 d-flex justify-content-end"><small class="text-muted"><span class="fa fa-map-marker-alt"></span> {{product.loacation}}</small></div>
                             </div>
                             <div class="row">

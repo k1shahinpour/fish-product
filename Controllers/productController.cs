@@ -21,27 +21,28 @@ namespace EFReverse.Controllers
         [Route("api/pro")]
         public IActionResult Index()
         {
-            var model = _context.TblOnlineProduct;
+            //var model = _context.TblOnlineProduct;
 
-            var x = from op in _context.TblOnlineProduct
-                    join p in _context.Product on op.ProdId equals p.ProdId
-                    join pt in _context.ProductType on p.TypeId equals pt.TypeId
-                    join ps in _context.PosData on op.PosId equals ps.PosId
-                    join ca in _context.Category on p.CateId equals ca.CatId
-                    select new
-                    {
-                        p.ProdNameEn,
-                        op.PosId,
-                        op.Qty,
-                        op.FreshPrice,
-                        pt.TypeName,
-                        ps.Loacation,
-                        op.Photo
-                    };
+            var model =(from op in _context.TblOnlineProduct
+                         join p in _context.Product on op.ProdId equals p.ProdId
+                         join pt in _context.ProductType on p.TypeId equals pt.TypeId
+                         join ps in _context.PosData on op.PosId equals ps.PosId
+                         join ca in _context.Category on p.CateId equals ca.CatId
+                         select new
+                         {
+                             p.ProdNameEn,
+                             op.PosId,
+                             op.Qty,
+                             op.FreshPrice,
+                             pt.TypeName,
+                             ps.Loacation,
+                             op.Photo,
+                             op.MealPrice
+                         }).ToList();
 
+            
 
-
-            return Ok(x);
+            return new JsonResult(model);
         }
 
         // GET: product/Details/5
